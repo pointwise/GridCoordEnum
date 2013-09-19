@@ -177,7 +177,7 @@ namespace eval pwio {
       if {1 == $numParents} {
         return true ;# hard bndry ents have only one parent
       } elseif { $numParents > 2 } {
-        # non-manifold topolgy!
+        # non-manifold topology!
         assert 0 "$ent $numParents has NONMANIFOLD CONNECTIVITY!"
       }
       # ent has 2 parents and is a cnxn UNLESS BC is applied
@@ -529,7 +529,7 @@ namespace eval pwio {
 
     # returns true/false
     # support ents placed in supEntsVarName
-    # if addEnts is true, ents eill also be added to supEntsVarName
+    # if addEnts is true, ents will also be added to supEntsVarName
     proc getSupportEnts { ents supEntsVarName {addEnts false}} {
       upvar 1 $supEntsVarName supEnts
       set supEnts [list]
@@ -1338,7 +1338,7 @@ namespace eval pwio {
         array set uniqueCoords {} ;# tracks unique coords
         set coordLevel [coordGetLevel $coord]
         if { $toLevel == $coordLevel } {
-            # Simple case of the coordinate already at the corect toLevel
+            # Simple case of the coordinate already at the correct toLevel
             lappend coords [pwio::fixCoord coord]
         } else {
             set currCoords [list $coord] ;# prime the pump
@@ -1699,7 +1699,7 @@ namespace eval pwio {
     proc entGetCachedNumPerimeterPts { ent } {
         variable perimPtCountCache
         if { "" == [array get perimPtCountCache $ent] } {
-            set perimPtCountCache($ent) [getPerimeterPointCount $ent]
+            set perimPtCountCache($ent) [utils::getPerimeterPointCount $ent]
         }
         return $perimPtCountCache($ent)
     }
