@@ -550,7 +550,7 @@ foreach ent $gridEntsToExport {
 }
 
 # Access the pw::Connector (2D) or a pw::Domain (3D) boundary cells.
-bcNames [pw::BoundaryCondition getNames]
+set bcNames [pw::BoundaryCondition getNames]
 foreach bcName $bcNames {
   set bc [pw::BoundaryCondition getByName $bcName]
   # Get the boundary grid entites using $bc. $bcEnts will contain
