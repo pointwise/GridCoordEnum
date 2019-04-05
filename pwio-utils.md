@@ -5,7 +5,7 @@
 A collection of utility procs.
 
 
-##Table Of Contents
+## Table Of Contents
 
 * [Namespace pwio::utils](#namespace-pwioutils)
 * [Library Reference pwio::utils](#library-reference-pwioutils)
@@ -63,7 +63,8 @@ foreach ent $selectedEnts {
 ```
 
 
-<br/>
+----------------------------------------------
+
 ```Tcl
 pwio::utils::entBaseType { ent {subTypeVarName ""} }
 ```
@@ -115,7 +116,8 @@ foreach selType {Block Domain Connector} {
 ```
 
 
-<br/>
+----------------------------------------------
+
 ```Tcl
 pwio::utils::getBlockFaces { blk }
 ```
@@ -130,7 +132,8 @@ The returned list contains [pw::Face][pwFace] entities.
 For usage, see [Example 2](#example-2).
 
 
-<br/>
+----------------------------------------------
+
 ```Tcl
 pwio::utils::getBlockDomains { blk }
 ```
@@ -143,7 +146,8 @@ Returns `blk`'s domains as a list of [pw::Domain][pwDomain] entities. It is poss
 For usage, see [Example 2](#example-2).
 
 
-<br/>
+----------------------------------------------
+
 ```Tcl
 pwio::utils::getFaceDomains { face }
 ```
@@ -156,7 +160,8 @@ Returns `face`'s domains as a list of [pw::Domain][pwDomain] entities. It is pos
 For usage, see [Example 2](#example-2).
 
 
-<br/>
+----------------------------------------------
+
 ```Tcl
 pwio::utils::getFaceEdges { face }
 ```
@@ -169,7 +174,8 @@ Returns `face`'s edges as a list of [pw::Edge][pwEdge] entities. The first edge 
 For usage, see [Example 2](#example-2).
 
 
-<br/>
+----------------------------------------------
+
 ```Tcl
 pwio::utils::getEdgeConnectors { edge }
 ```
@@ -182,7 +188,8 @@ Returns `edge`'s connectors as a list of [pw::Connector][pwConnector] entities. 
 For usage, see [Example 2](#example-2).
 
 
-<br/>
+----------------------------------------------
+
 ```Tcl
 pwio::utils::getFaceEdgeConnectors { face }
 ```
@@ -193,7 +200,8 @@ Returns `face`'s connectors as a list of [pw::Connector][pwConnector] entities. 
 </dl>
 
 
-<br/>
+----------------------------------------------
+
 ```Tcl
 pwio::utils::getPerimeterPointCount { ent }
 ```
@@ -208,7 +216,8 @@ Returns the number of [grid points][point] on `ent`'s outer perimeter. This coun
 For usage, see [Example 2](#example-2).
 
 
-<br/>
+----------------------------------------------
+
 ```Tcl
 pwio::utils::getOwnedPointCount { ent }
 ```
@@ -223,7 +232,8 @@ Returns the number of [grid points][point] on `ent`'s interior (non-perimeter po
 For usage, see [Example 2](#example-2).
 
 
-<br/>
+----------------------------------------------
+
 ```Tcl
 pwio::utils::isBndryEnt { ent allEnts }
 ```
@@ -240,7 +250,8 @@ An error will occur if `ent` is anything other than a [pw::Connector][pwConnecto
 For usage, see [Example 2](#example-2).
 
 
-<br/>
+----------------------------------------------
+
 ```Tcl
 pwio::utils::getNodeDbEnt { node dbEntVarName }
 ```
@@ -255,7 +266,8 @@ Returns **true** if `node` is constrained to a DB entity.
 `node` must be a [pw::Node][pwNode] entity.
 
 
-<br/>
+----------------------------------------------
+
 ```Tcl
 pwio::utils::entLockInterior { ent }
 ```
@@ -286,7 +298,8 @@ pwio::utils::entUnlockInterior $ent
 ```
 
 
-<br/>
+----------------------------------------------
+
 ```Tcl
 pwio::utils::entUnlockInterior { ent {clearAllLocks 0} }
 ```
@@ -304,7 +317,8 @@ For usage and more information about entity locking, see
 **pwio::utils::entLockInterior**.
 
 
-<br/>
+----------------------------------------------
+
 ```Tcl
 pwio::utils::ijkToIndexStructured { ijk ijkdim }
 ```
@@ -360,7 +374,8 @@ doit [list $i $j $k] $ijkdim
 ```
 
 
-<br/>
+----------------------------------------------
+
 ```Tcl
 pwio::utils::indexToIjkStructured { ndx ijkdim }
 ```
@@ -377,7 +392,8 @@ The reverse mapping is done with **pwio::utils::ijkToIndexStructured**.
 For usage, see **pwio::utils::ijkToIndexStructured**.
 
 
-<br/>
+----------------------------------------------
+
 ```Tcl
 pwio::utils::entIjkToIndex { ent ijk }
 ```
@@ -460,7 +476,8 @@ doit $blk [list $i $j $k]
 ```
 
 
-<br/>
+----------------------------------------------
+
 ```Tcl
 pwio::utils::entIndexToIjk { ent ndx }
 ```
@@ -477,7 +494,8 @@ The reverse mapping is done with **pwio::utils::entIjkToIndex**.
 For usage, see **pwio::utils::entIjkToIndex**.
 
 
-<br/>
+----------------------------------------------
+
 ```Tcl
 pwio::utils::makeCoord { ent ijk }
 ```
@@ -499,7 +517,8 @@ set uCoord [pwio::utils::makeCoord $unsBlk {64 1 1}]
 ```
 
 
-<br/>
+----------------------------------------------
+
 ```Tcl
 pwio::utils::makeCoordFromIjkVals { ent i j k }
 ```
@@ -521,7 +540,8 @@ set uCoord [pwio::utils::makeCoordFromIjkVals $unsBlk 64 1 1]
 ```
 
 
-<br/>
+----------------------------------------------
+
 ```Tcl
 pwio::utils::makeCoordFromEntIndex { ent ndx }
 ```
@@ -543,7 +563,8 @@ set uCoord [pwio::utils::makeCoordFromEntIndex $unsBlk 64]
 ```
 
 
-<br/>
+----------------------------------------------
+
 ```Tcl
 pwio::utils::sortEntsByType { ents }
 ```
@@ -558,7 +579,8 @@ The returned list will be in **Block**, **Domain**, **Connector**, **Node** orde
 For usage, see [Example 1](#example-1).
 
 
-<br/>
+----------------------------------------------
+
 ```Tcl
 pwio::utils::pointToString { pt }
 ```
@@ -573,7 +595,8 @@ Returns a string representation of `pt`.
 The resulting string will be one of *"{x y z}"* or *"{u v dbEnt}"*.
 
 
-<br/>
+----------------------------------------------
+
 ```Tcl
 pwio::utils::xyzEqual { xyz1 xyz2 {tol 1e-8} }
 ```
@@ -601,7 +624,8 @@ puts [pwio::utils::xyzEqual {1.0 2.0 3.0} {1.1 2.0 3.0} 0.2]
 ```
 
 
-<br/>
+----------------------------------------------
+
 ```Tcl
 pwio::utils::valEqual { val1 val2 {tol 1e-8} }
 ```
@@ -629,7 +653,8 @@ puts [pwio::utils::valEqual 1.0 1.1 0.2]
 ```
 
 
-<br/>
+----------------------------------------------
+
 ```Tcl
 pwio::utils::coordToPtString { coord }
 ```
@@ -653,7 +678,8 @@ puts [pwio::utils::coordToPtString $coord]
 ```
 
 
-<br/>
+----------------------------------------------
+
 ```Tcl
 pwio::utils::vcToString { vc }
 ```
@@ -676,7 +702,8 @@ puts "'[pwio::utils::vcToString $vc]'"
 ```
 
 
-<br/>
+----------------------------------------------
+
 ```Tcl
 pwio::utils::labelPt { ndx pt }
 ```
@@ -697,7 +724,8 @@ pwio::utils::labelPt "hello" {10.0 2.0 3.0}
 ```
 
 
-<br/>
+----------------------------------------------
+
 ```Tcl
 pwio::utils::printEntInfo { title ents {dim 0} {allEnts {}} }
 ```
@@ -718,7 +746,8 @@ Dumps a table of information about `ents`.
 For usage, see [Example 1](#example-1).
 
 
-<br/>
+----------------------------------------------
+
 ```Tcl
 pwio::utils::getSelection { selType selectedVarName errMsgVarName }
 ```
@@ -743,7 +772,8 @@ See also, **pwio::getSelectType**.
 For usage, see [Example 1](#example-1), [Example 2](#example-2), **pwio::utils::entBaseType**.
 
 
-<br/>
+----------------------------------------------
+
 ```Tcl
 pwio::utils::getSupportEnts { ents supEntsVarName {addEnts false}}
 ```
