@@ -4,7 +4,7 @@
 A collection of procs supporting the manipulation of cells.
 
 
-##Table Of Contents
+## Table Of Contents
 
 * [Namespace pwio::cell](#namespace-pwiocell)
 * [Library Reference pwio::cell](#library-reference-pwiocell)
@@ -51,7 +51,8 @@ Returns `cell`'s edges as a list. Each edge is itself a list (a list of lists).
 </dl>
 
 
-<br/>
+----------------------------------------------
+
 ```Tcl
 pwio::cell::getFaces { cell {minFirstOrder 0} }
 ```
@@ -66,7 +67,8 @@ Returns `cell`'s faces as a list. Each face is itself a list (a list of lists).
 </dl>
 
 
-<br/>
+----------------------------------------------
+
 ```Tcl
 pwio::cell::getFaceEdges { face {minFirstOrder 0} {revVarName ""} }
 ```
