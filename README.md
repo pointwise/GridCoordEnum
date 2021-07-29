@@ -601,11 +601,9 @@ Things to consider:
 * Only items in `$bcEnts` that are used by `$gridEntsToExport` entities should
   be exported (connectors used by domains, domains used by blocks).
 * When exporting 2D boundaries:
-   * The `getCellCount` and `getCell` procs are **not** defined for `pw::Connector` entities.
-   * The `pw::Connector` (linear) cells are defined as two consecutive local connector points *{0 1}, {1 2}*, etc.
+   * The [pw::Connector][pwConnector] (linear) cells are defined as two consecutive local connector points *{0 1}, {1 2}*, etc.
    * The local cell indices must be mapped to global **pwio** indices using `pwio::getCoordIndex`.
 * When exporting 3D boundaries:
-   * The `getCellCount` and `getCell` procs **are** defined for [pw::Domain][pwDomain] entities.
    * The [pw::Domain][pwDomain] boundary cells can be enumerated in a manner similar to the volume cells example.
 
 
